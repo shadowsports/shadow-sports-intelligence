@@ -31,3 +31,18 @@ margin-bottom: 20px;
 font-size: 50px;
 font-weight: bold;
 }
+.game-card {
+background: #151B23;
+border-radius: 12px;
+padding: 25px;
+margin: 30px auto;
+max-width: 400px;
+}
+
+.game-card h3 {
+font-size: 24px;
+}
+
+.game-card p {
+font-size: 16px;
+}
