@@ -30,7 +30,20 @@ intelligenceScore: 94
 
 document.getElementById("score").innerHTML =
 Math.round(shadowScore) + "/100"
+document.getElementById("pitching-score").innerHTML =
+"Pitching: " + scoreFactors.pitching;
 
+document.getElementById("bullpen-score").innerHTML =
+"Bullpen: " + scoreFactors.bullpen;
+
+document.getElementById("lineup-score").innerHTML =
+"Lineups: " + scoreFactors.lineup;
+
+document.getElementById("weather-score").innerHTML =
+"Weather: " + scoreFactors.weather;
+
+document.getElementById("data-score").innerHTML =
+"Data Quality: " + scoreFactors.dataQuality;
 
 const gamesContainer = document.getElementById("games-container");
 
