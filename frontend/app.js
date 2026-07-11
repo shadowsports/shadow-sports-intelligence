@@ -10,8 +10,25 @@ weather: "Pending Verification",
 intelligenceScore: 94
 };
 
-const scoreDisplay = document.getElementById("score");
 
-scoreDisplay.innerHTML = gameData.intelligenceScore + "/100";
+document.getElementById("score").innerHTML =
+gameData.intelligenceScore + "/100";
+
+
+document.getElementById("matchup").innerHTML =
+gameData.awayTeam + " vs " + gameData.homeTeam;
+
+
+document.getElementById("pitchers").innerHTML =
+"Starting Pitchers: " + gameData.startingPitchers;
+
+
+document.getElementById("lineups").innerHTML =
+"Lineups: " + gameData.lineups;
+
+
+document.getElementById("bullpen").innerHTML =
+"Bullpen Status: " + gameData.bullpen;
+
 
 console.log(gameData);
