@@ -62,3 +62,19 @@ font-size: 24px;
 font-size: 16px;
 text-align: left;
 }
+.pitcher-panel {
+background: #151B23;
+border-radius: 12px;
+padding: 25px;
+margin: 30px auto;
+max-width: 600px;
+}
+
+.pitcher-panel h2 {
+margin-bottom: 15px;
+}
+
+.pitcher-panel p {
+text-align: left;
+margin: 10px 0;
+}
