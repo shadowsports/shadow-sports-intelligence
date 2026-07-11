@@ -1,5 +1,21 @@
 console.log("Shadow Sports Intelligence is running.");
+const scoreFactors = {
+pitching: 96,
+bullpen: 91,
+lineup: 89,
+weather: 93,
+dataQuality: 98
+};
 
+
+const shadowScore =
+(
+scoreFactors.pitching +
+scoreFactors.bullpen +
+scoreFactors.lineup +
+scoreFactors.weather +
+scoreFactors.dataQuality
+) / 5;
 const games = [
 {
 awayTeam: "Athletics",
