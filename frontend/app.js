@@ -29,7 +29,7 @@ intelligenceScore: 94
 
 
 document.getElementById("score").innerHTML =
-games[0].intelligenceScore + "/100";
+Math.round(shadowScore) + "/100"
 
 
 const gamesContainer = document.getElementById("games-container");
