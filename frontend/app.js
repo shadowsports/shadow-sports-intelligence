@@ -1,34 +1,42 @@
 console.log("Shadow Sports Intelligence is running.");
 
-const gameData = {
+const games = [
+{
 awayTeam: "Athletics",
 homeTeam: "Detroit Tigers",
 startingPitchers: "Pending Verification",
 lineups: "Pending Verification",
 bullpen: "Pending Verification",
-weather: "Pending Verification",
 intelligenceScore: 94
-};
+}
+];
 
 
 document.getElementById("score").innerHTML =
-gameData.intelligenceScore + "/100";
+games[0].intelligenceScore + "/100";
 
 
-document.getElementById("matchup").innerHTML =
-gameData.awayTeam + " vs " + gameData.homeTeam;
+const gamesContainer = document.getElementById("games-container");
 
 
-document.getElementById("pitchers").innerHTML =
-"Starting Pitchers: " + gameData.startingPitchers;
+games.forEach(function(game) {
 
+const gameCard = document.createElement("div");
 
-document.getElementById("lineups").innerHTML =
-"Lineups: " + gameData.lineups;
+gameCard.className = "game-card";
 
+gameCard.innerHTML = `
+<h2>MLB Game</h2>
+<h3>${game.awayTeam} vs ${game.homeTeam}</h3>
 
-document.getElementById("bullpen").innerHTML =
-"Bullpen Status: " + gameData.bullpen;
+<p>Starting Pitchers: ${game.startingPitchers}</p>
 
+<p>Lineups: ${game.lineups}</p>
 
-console.log(gameData);
+<p>Bullpen: ${game.bullpen}</p>
+
+`;
+
+gamesContainer.appendChild(gameCard);
+
+});
