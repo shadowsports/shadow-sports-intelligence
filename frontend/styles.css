@@ -46,3 +46,19 @@ font-size: 24px;
 .game-card p {
 font-size: 16px;
 }
+.verification-card {
+background: #151B23;
+border-radius: 12px;
+padding: 25px;
+margin: 30px auto;
+max-width: 400px;
+}
+
+.verification-card h2 {
+font-size: 24px;
+}
+
+.verification-card p {
+font-size: 16px;
+text-align: left;
+}
