@@ -1,108 +1,720 @@
-body {
-background: #0B0F14;
-color: white;
-font-family: Arial, sans-serif;
-text-align: center;
-margin: 0;
-padding: 40px;
+/* ==========================================================
+SHADOW Sports Intelligence Platform
+Version 0.2
+Package 1 - Foundation
+Part 1
+========================================================== */
+
+/* ---------- Reset ---------- */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-h1 {
-font-size: 40px;
+body{
+
+background:#0B0F14;
+
+color:#F5F7FA;
+
+font-family:Arial, Helvetica, sans-serif;
+
+min-height:100vh;
+
+line-height:1.5;
 }
 
-p {
-font-size: 20px;
+/* ---------- Links ---------- */
+
+a{
+
+color:inherit;
+
+text-decoration:none;
 }
 
-.score-card {
-background: #151B23;
-border-radius: 12px;
-padding: 30px;
-margin: 40px auto;
-max-width: 350px;
+/* ---------- Header ---------- */
+
+.top-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:25px 50px;
+
+background:#121821;
+
+border-bottom:1px solid #1D2632;
+
+flex-wrap:wrap;
 }
 
-.score-card h2 {
-margin-bottom: 20px;
+.brand-section{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
 }
 
-.score-number {
-font-size: 50px;
-font-weight: bold;
-}
-.game-card {
-background: #151B23;
-border-radius: 12px;
-padding: 25px;
-margin: 30px auto;
-max-width: 400px;
+.brand-icon{
+
+font-size:42px;
 }
 
-.game-card h3 {
-font-size: 24px;
+.brand-section h1{
+
+font-size:36px;
+
+letter-spacing:3px;
+
+color:#FFFFFF;
 }
 
-.game-card p {
-font-size: 16px;
-}
-.verification-card {
-background: #151B23;
-border-radius: 12px;
-padding: 25px;
-margin: 30px auto;
-max-width: 400px;
+.brand-subtitle{
+
+color:#8FA6C1;
+
+font-size:14px;
+
+margin-top:2px;
 }
 
-.verification-card h2 {
-font-size: 24px;
+.tagline{
+
+font-size:18px;
+
+color:#55B5FF;
+
+font-weight:bold;
 }
 
-.verification-card p {
-font-size: 16px;
-text-align: left;
-}
-.pitcher-panel {
-background: #151B23;
-border-radius: 12px;
-padding: 25px;
-margin: 30px auto;
-max-width: 600px;
+/* ---------- Navigation ---------- */
+
+.main-nav{
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+padding:20px;
+
+background:#11161F;
+
+border-bottom:1px solid #1D2632;
+
+flex-wrap:wrap;
 }
 
-.pitcher-panel h2 {
-margin-bottom: 15px;
+.nav-btn{
+
+background:#1A2230;
+
+color:white;
+
+border:none;
+
+border-radius:8px;
+
+padding:12px 22px;
+
+cursor:pointer;
+
+transition:.25s;
 }
 
-.pitcher-panel p {
-text-align: left;
-margin: 10px 0;
-}
-.dashboard-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-gap: 20px;
-margin: 30px;
-}
-.dashboard-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-gap: 20px;
-margin: 30px;
-}
-.score-breakdown {
-background: #151B23;
-border-radius: 12px;
-padding: 25px;
-margin: 30px auto;
-max-width: 600px;
+.nav-btn:hover{
+
+background:#248BFF;
 }
 
-.score-breakdown h2 {
-margin-bottom: 15px;
+.nav-btn.active{
+
+background:#248BFF;
 }
 
-.score-breakdown p {
-text-align: left;
-margin: 10px 0;
+/* ---------- Mission ---------- */
+
+.mission-banner{
+
+max-width:1200px;
+
+margin:35px auto;
+
+background:#151D29;
+
+border-left:5px solid #248BFF;
+
+border-radius:10px;
+
+padding:22px 28px;
+}
+
+.mission-banner p{
+
+color:#D9E5F3;
+
+font-size:17px;
+
+text-align:left;
+}
+
+/* ---------- Dashboard ---------- */
+
+.dashboard-container{
+
+width:95%;
+
+max-width:1500px;
+
+margin:0 auto 40px auto;
+}
+
+.dashboard-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+
+gap:24px;
+}
+
+/* ---------- Cards ---------- */
+
+.card{
+
+background:#151B23;
+
+border:1px solid #202A36;
+
+border-radius:14px;
+
+padding:24px;
+
+transition:.25s;
+}
+
+.card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 10px 25px rgba(0,0,0,.30);
+}
+
+.card-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:20px;
+}
+
+.card-title{
+
+font-size:20px;
+
+font-weight:bold;
+}
+
+.span-2{
+
+grid-column:span 2;
+}
+/* ==========================================================
+Package 1 - Foundation
+Part 2
+Dashboard Components
+========================================================== */
+
+/* ---------- Shadow Score ---------- */
+
+.score-display{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+}
+
+.score-ring{
+
+width:160px;
+
+height:160px;
+
+border-radius:50%;
+
+border:8px solid #248BFF;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+margin:15px auto;
+
+background:linear-gradient(180deg,#18212E,#10161F);
+}
+
+.score-ring span{
+
+font-size:44px;
+
+font-weight:bold;
+
+color:#FFFFFF;
+}
+
+.score-label{
+
+margin-top:10px;
+
+color:#9DB2C8;
+
+font-size:15px;
+}
+
+/* ---------- Status Badges ---------- */
+
+.status-badge{
+
+padding:6px 12px;
+
+border-radius:999px;
+
+font-size:12px;
+
+font-weight:bold;
+}
+
+.verified{
+
+background:#1E8E5A;
+
+color:white;
+}
+
+/* ---------- Confidence Meter ---------- */
+
+.confidence-row{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:12px 0;
+
+border-bottom:1px solid #232D39;
+}
+
+.confidence-row:last-child{
+
+border-bottom:none;
+}
+
+.confidence-row.total{
+
+font-weight:bold;
+
+color:#55B5FF;
+}
+
+/* ---------- Games ---------- */
+
+.games-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+}
+
+.game-card{
+
+background:#111923;
+
+border:1px solid #283545;
+
+border-radius:12px;
+
+padding:20px;
+
+text-align:left;
+
+transition:.25s;
+}
+
+.game-card:hover{
+
+border-color:#248BFF;
+}
+
+.game-card h2{
+
+font-size:15px;
+
+color:#7FBFFF;
+
+margin-bottom:8px;
+}
+
+.game-card h3{
+
+font-size:22px;
+
+margin-bottom:14px;
+}
+
+.game-card p{
+
+color:#CBD6E2;
+
+margin:8px 0;
+
+font-size:15px;
+}
+
+/* ---------- Live Indicator ---------- */
+
+.live-dot{
+
+color:#31D158;
+
+font-weight:bold;
+
+animation:pulse 1.4s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+
+opacity:1;
+}
+
+50%{
+
+opacity:.35;
+}
+
+100%{
+
+opacity:1;
+}
+}
+
+/* ---------- Verification ---------- */
+
+.verify-item{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:10px 0;
+
+border-bottom:1px solid #232D39;
+}
+
+.verify-item:last-child{
+
+border-bottom:none;
+}
+
+.verify-status{
+
+padding:5px 10px;
+
+border-radius:999px;
+
+font-size:12px;
+
+font-weight:bold;
+}
+
+.verify-status.pending{
+
+background:#A66A00;
+
+color:white;
+}
+
+.verify-status.verified{
+
+background:#1E8E5A;
+
+color:white;
+}
+
+/* ---------- Intelligence Panels ---------- */
+
+.intel-row{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:12px 0;
+
+border-bottom:1px solid #232D39;
+}
+
+.intel-row:last-child{
+
+border-bottom:none;
+}
+/* ==========================================================
+Package 1 - Foundation
+Part 3
+Weather • API • Footer • Responsive
+========================================================== */
+
+/* ---------- Weather Intelligence ---------- */
+
+.weather-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+margin-top:10px;
+}
+
+.weather-box{
+
+background:#10161F;
+
+border:1px solid #283545;
+
+border-radius:10px;
+
+padding:18px;
+
+text-align:center;
+
+transition:.25s;
+}
+
+.weather-box:hover{
+
+border-color:#248BFF;
+
+transform:translateY(-2px);
+}
+
+.weather-value{
+
+font-size:24px;
+
+font-weight:bold;
+
+color:#55B5FF;
+}
+
+.weather-label{
+
+margin-top:8px;
+
+font-size:13px;
+
+color:#9DB2C8;
+}
+
+/* ---------- API Status ---------- */
+
+.api-grid{
+
+display:grid;
+
+gap:12px;
+}
+
+.api-item{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:12px 0;
+
+border-bottom:1px solid #232D39;
+}
+
+.api-item:last-child{
+
+border-bottom:none;
+}
+
+.api-status{
+
+padding:5px 10px;
+
+border-radius:999px;
+
+font-size:12px;
+
+font-weight:bold;
+}
+
+.api-status.online{
+
+background:#1E8E5A;
+
+color:white;
+}
+
+.api-status.pending{
+
+background:#A66A00;
+
+color:white;
+}
+
+/* ---------- Footer ---------- */
+
+.footer{
+
+margin-top:50px;
+
+padding:30px;
+
+border-top:1px solid #1D2632;
+
+text-align:center;
+
+color:#8FA6C1;
+
+font-size:14px;
+}
+
+/* ---------- Scrollbar ---------- */
+
+::-webkit-scrollbar{
+
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+
+background:#0B0F14;
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#2B394A;
+
+border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#248BFF;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width:900px){
+
+.top-header{
+
+flex-direction:column;
+
+text-align:center;
+
+gap:20px;
+}
+
+.brand-section{
+
+justify-content:center;
+}
+
+.dashboard-grid{
+
+grid-template-columns:1fr;
+}
+
+.span-2{
+
+grid-column:span 1;
+}
+
+.weather-grid{
+
+grid-template-columns:1fr 1fr;
+}
+}
+
+@media (max-width:600px){
+
+body{
+
+font-size:15px;
+}
+
+.top-header{
+
+padding:20px;
+}
+
+.brand-section h1{
+
+font-size:28px;
+}
+
+.tagline{
+
+font-size:16px;
+}
+
+.score-ring{
+
+width:130px;
+
+height:130px;
+}
+
+.score-ring span{
+
+font-size:34px;
+}
+
+.weather-grid{
+
+grid-template-columns:1fr;
+}
+
+.main-nav{
+
+flex-direction:column;
+
+align-items:stretch;
+}
+
+.nav-btn{
+
+width:100%;
+}
 }
