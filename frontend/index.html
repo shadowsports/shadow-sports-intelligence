@@ -1,92 +1,262 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-<title>Shadow Sports Intelligence</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SHADOW | Sports Intelligence Platform</title>
 
 <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
-<header>
 
-<h1>Shadow Sports Intelligence</h1>
+<!-- Header -->
+<header class="top-header">
 
-<p>MLB Intelligence Dashboard</p>
+<div class="brand-section">
+<div class="brand-icon">🛡️</div>
 
+<div>
+<h1>SHADOW</h1>
+<p class="brand-subtitle">Sports Intelligence Platform</p>
+</div>
+</div>
+
+<div class="tagline">
+<strong>See Beyond the Score.</strong>
+</div>
 </header>
- <nav>
 
-<button>MLB</button>
-
-<button>Analytics</button>
-
-<button>History</button>
-
-<button>Settings</button>
-
+<!-- Navigation -->
+<nav class="main-nav">
+<button class="nav-btn active">MLB</button>
+<button class="nav-btn">Analytics</button>
+<button class="nav-btn">History</button>
+<button class="nav-btn">Settings</button>
 </nav>
-<h1>Shadow Sports Intelligence</h1>
 
-<p>Verified Data. Smarter Decisions.</p>
+<!-- Mission Banner -->
+<section class="mission-banner">
+<p>
+SHADOW Sports Intelligence Platform delivers verified sports intelligence through advanced analytics, AI,
+Monte Carlo simulation, and multi-source data verification.
+</p>
+</section>
+
+<!-- Main Dashboard -->
+<main class="dashboard-container">
 
 <div class="dashboard-grid">
-<div class="score-card">
 
-<h2>Shadow Intelligence Score</h2>
+<!-- Intelligence Score -->
+<section class="card score-card">
 
-<div class="score-number" id="score">
-Loading...
+<div class="card-header">
+<span class="card-title">Shadow Intelligence Score</span>
+<span class="status-badge verified">Verified</span>
 </div>
 
+<div class="score-display">
+<div class="score-ring">
+<span id="score">94</span>
 </div>
-<div id="games-container">
 
+<div class="score-label">Overall Confidence</div>
 </div>
- <section class="pitcher-panel">
-
-<h2>Pitcher Intelligence</h2>
-
-<p>Starting Pitcher Data: Pending Verification</p>
-
-<p>Advanced Metrics: Pending Verification</p>
-
-<p>Matchup History: Pending Verification</p>
-
 </section>
- <section class="score-breakdown">
 
-<h2>Shadow Score Breakdown</h2>
+<!-- Confidence Meter -->
+<section class="card confidence-card">
 
-<p id="pitching-score"></p>
+<div class="card-header">
+<span class="card-title">Confidence Meter</span>
+</div>
 
-<p id="bullpen-score"></p>
+<div class="confidence-row">
+<span>Pitching</span>
+<span id="pitching-score">96</span>
+</div>
 
-<p id="lineup-score"></p>
+<div class="confidence-row">
+<span>Bullpen</span>
+<span id="bullpen-score">91</span>
+</div>
 
-<p id="weather-score"></p>
+<div class="confidence-row">
+<span>Lineups</span>
+<span id="lineup-score">89</span>
+</div>
 
-<p id="data-score"></p>
+<div class="confidence-row">
+<span>Weather</span>
+<span id="weather-score">93</span>
+</div>
 
+<div class="confidence-row total">
+<span>Data Quality</span>
+<span id="data-score">98</span>
+</div>
 </section>
- </div>
- <div class="verification-card">
 
-<h2>Data Verification</h2>
+<!-- MLB Games -->
+<section class="card games-card span-2">
 
-<p>Starting Pitchers: ⚠️ Pending</p>
+<div class="card-header">
+<span class="card-title">Today's MLB Games</span>
+<span class="live-dot">● LIVE</span>
+</div>
 
-<p>Lineups: ⚠️ Pending</p>
+<div id="games-container" class="games-list"></div>
+</section>
 
-<p>Bullpen: ⚠️ Pending</p>
+<!-- Verification -->
+<section class="card verification-card">
 
-<p>Weather: ⚠️ Pending</p>
+<div class="card-header">
+<span class="card-title">Data Verification</span>
+</div>
 
-</div> 
+<div class="verify-item">
+<span>Starting Pitchers</span>
+<span class="verify-status pending">Pending</span>
+</div>
+
+<div class="verify-item">
+<span>Lineups</span>
+<span class="verify-status pending">Pending</span>
+</div>
+
+<div class="verify-item">
+<span>Bullpen</span>
+<span class="verify-status pending">Pending</span>
+</div>
+
+<div class="verify-item">
+<span>Weather</span>
+<span class="verify-status pending">Pending</span>
+</div>
+</section>
+
+<!-- Pitcher Intelligence -->
+<section class="card pitcher-card">
+
+<div class="card-header">
+<span class="card-title">Pitcher Intelligence</span>
+</div>
+
+<div class="intel-row">
+<span>Starter Status</span>
+<span>Awaiting Confirmation</span>
+</div>
+
+<div class="intel-row">
+<span>Advanced Metrics</span>
+<span>Pending</span>
+</div>
+
+<div class="intel-row">
+<span>Matchup History</span>
+<span>Pending</span>
+</div>
+</section>
+
+<!-- Bullpen Intelligence -->
+<section class="card bullpen-card">
+
+<div class="card-header">
+<span class="card-title">Bullpen Intelligence</span>
+</div>
+
+<div class="intel-row">
+<span>Availability</span>
+<span>Pending</span>
+</div>
+
+<div class="intel-row">
+<span>Recent Workload</span>
+<span>Pending</span>
+</div>
+
+<div class="intel-row">
+<span>Fatigue Rating</span>
+<span>Pending</span>
+</div>
+</section>
+
+<!-- Weather Intelligence -->
+<section class="card weather-card">
+
+<div class="card-header">
+<span class="card-title">Weather Intelligence</span>
+</div>
+
+<div class="weather-grid">
+<div class="weather-box">
+<div class="weather-value">--</div>
+<div class="weather-label">Temp</div>
+</div>
+
+<div class="weather-box">
+<div class="weather-value">--</div>
+<div class="weather-label">Wind</div>
+</div>
+
+<div class="weather-box">
+<div class="weather-value">--</div>
+<div class="weather-label">Humidity</div>
+</div>
+
+<div class="weather-box">
+<div class="weather-value">--</div>
+<div class="weather-label">Roof</div>
+</div>
+</div>
+</section>
+
+<!-- API Status -->
+<section class="card api-card span-2">
+
+<div class="card-header">
+<span class="card-title">System Status</span>
+</div>
+
+<div class="api-grid">
+<div class="api-item">
+<span>MLB Feed</span>
+<span class="api-status online">Online</span>
+</div>
+
+<div class="api-item">
+<span>Verification Engine</span>
+<span class="api-status online">Online</span>
+</div>
+
+<div class="api-item">
+<span>Weather Feed</span>
+<span class="api-status pending">Pending</span>
+</div>
+
+<div class="api-item">
+<span>Simulation Engine</span>
+<span class="api-status pending">Pending</span>
+</div>
+</div>
+</section>
+
+</div>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+<p>© 2026 SHADOW Sports Intelligence Platform — See Beyond the Score.</p>
+</footer>
 
 <script src="app.js"></script>
 
 </body>
 
+</html>
 </html>
