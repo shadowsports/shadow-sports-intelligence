@@ -29,7 +29,7 @@ intelligenceScore: 94
 
 
 document.getElementById("score").innerHTML =
-Math.round(shadowScore) + "/100"
+Math.round(shadowScore) + "/100";
 document.getElementById("pitching-score").innerHTML =
 "Pitching: " + scoreFactors.pitching;
 
