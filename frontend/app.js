@@ -111,13 +111,23 @@ container.appendChild(card);
 /*=========================================================
 Dashboard Initialization
 =========================================================*/
+function updateRefreshTime() {
 
+const refresh = document.getElementById("last-updated");
+
+if (!refresh) return;
+
+const now = new Date();
+
+refresh.textContent = now.toLocaleString();
+
+}
 function initializeDashboard() {
 
 renderScore();
 
 renderGames();
-
+updateRefreshTime();
 console.log("Dashboard Loaded");
 
 }
