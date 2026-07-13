@@ -1,4 +1,17 @@
-console.log("Shadow Sports Intelligence is running.");
+/*
+==========================================================
+SHADOW Sports Intelligence Platform
+Version 0.2 Beta
+Package 1 - Foundation
+==========================================================
+*/
+
+console.log("SHADOW Sports Intelligence Platform Initialized");
+
+/*=========================================================
+Configuration
+=========================================================*/
+
 const scoreFactors = {
 pitching: 96,
 bullpen: 91,
@@ -7,15 +20,6 @@ weather: 93,
 dataQuality: 98
 };
 
-
-const shadowScore =
-(
-scoreFactors.pitching +
-scoreFactors.bullpen +
-scoreFactors.lineup +
-scoreFactors.weather +
-scoreFactors.dataQuality
-) / 5;
 const games = [
 {
 awayTeam: "Athletics",
@@ -27,45 +31,95 @@ intelligenceScore: 94
 }
 ];
 
+/*=========================================================
+Shadow Intelligence Engine
+=========================================================*/
 
-document.getElementById("score").innerHTML =
-Math.round(shadowScore) + "/100";
-document.getElementById("pitching-score").innerHTML =
-"Pitching: " + scoreFactors.pitching;
+function calculateShadowScore() {
 
-document.getElementById("bullpen-score").innerHTML =
-"Bullpen: " + scoreFactors.bullpen;
+const values = Object.values(scoreFactors);
 
-document.getElementById("lineup-score").innerHTML =
-"Lineups: " + scoreFactors.lineup;
+const total = values.reduce((sum, value) => sum + value, 0);
 
-document.getElementById("weather-score").innerHTML =
-"Weather: " + scoreFactors.weather;
+return Math.round(total / values.length);
 
-document.getElementById("data-score").innerHTML =
-"Data Quality: " + scoreFactors.dataQuality;
+}
 
-const gamesContainer = document.getElementById("games-container");
+/*=========================================================
+Dashboard Rendering
+=========================================================*/
 
+function renderScore() {
 
-games.forEach(function(game) {
+const score = calculateShadowScore();
 
-const gameCard = document.createElement("div");
+document.getElementById("score").textContent = score;
 
-gameCard.className = "game-card";
+document.getElementById("pitching-score").textContent =
+scoreFactors.pitching;
 
-gameCard.innerHTML = `
+document.getElementById("bullpen-score").textContent =
+scoreFactors.bullpen;
+
+document.getElementById("lineup-score").textContent =
+scoreFactors.lineup;
+
+document.getElementById("weather-score").textContent =
+scoreFactors.weather;
+
+document.getElementById("data-score").textContent =
+scoreFactors.dataQuality;
+
+}
+
+/*=========================================================
+Game Cards
+=========================================================*/
+
+function renderGames() {
+
+const container = document.getElementById("games-container");
+
+container.innerHTML = "";
+
+games.forEach(game => {
+
+const card = document.createElement("div");
+
+card.className = "game-card";
+
+card.innerHTML = `
 <h2>MLB Game</h2>
+
 <h3>${game.awayTeam} vs ${game.homeTeam}</h3>
 
-<p>Starting Pitchers: ${game.startingPitchers}</p>
+<p><strong>Starting Pitchers:</strong> ${game.startingPitchers}</p>
 
-<p>Lineups: ${game.lineups}</p>
+<p><strong>Lineups:</strong> ${game.lineups}</p>
 
-<p>Bullpen: ${game.bullpen}</p>
+<p><strong>Bullpen:</strong> ${game.bullpen}</p>
 
+<p><strong>Shadow Intelligence Score:</strong> ${game.intelligenceScore}</p>
 `;
 
-gamesContainer.appendChild(gameCard);
+container.appendChild(card);
 
 });
+
+}
+
+/*=========================================================
+Dashboard Initialization
+=========================================================*/
+
+function initializeDashboard() {
+
+renderScore();
+
+renderGames();
+
+console.log("Dashboard Loaded");
+
+}
+
+initializeDashboard();
