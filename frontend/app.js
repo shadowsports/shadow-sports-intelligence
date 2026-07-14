@@ -27,7 +27,26 @@ homeTeam: "Detroit Tigers",
 startingPitchers: "Pending Verification",
 lineups: "Pending Verification",
 bullpen: "Pending Verification",
+  verification: "Awaiting Live Data",
 intelligenceScore: 94
+},
+{
+awayTeam: "Los Angeles Dodgers",
+homeTeam: "San Diego Padres",
+startingPitchers: "Pending Verification",
+lineups: "Pending Verification",
+bullpen: "Pending Verification",
+  verification: "Awaiting Live Data",
+intelligenceScore: 92
+},
+{
+awayTeam: "New York Yankees",
+homeTeam: "Boston Red Sox",
+startingPitchers: "Pending Verification",
+lineups: "Pending Verification",
+bullpen: "Pending Verification",
+  verification: "Awaiting Live Data",
+intelligenceScore: 95
 }
 ];
 
@@ -98,7 +117,7 @@ card.innerHTML = `
 <p><strong>Lineups:</strong> ${game.lineups}</p>
 
 <p><strong>Bullpen:</strong> ${game.bullpen}</p>
-
+<p><strong>Verification:</strong> ${game.verification}</p>
 <p><strong>Shadow Intelligence Score:</strong> ${game.intelligenceScore}</p>
 `;
 
