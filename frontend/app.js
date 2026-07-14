@@ -19,8 +19,10 @@ lineup: 89,
 weather: 93,
 dataQuality: 98
 };
-
-const games = [
+/*=========================================================
+Sample Dashboard Data
+=========================================================*/
+let games = [
 {
 awayTeam: "Athletics",
 homeTeam: "Detroit Tigers",
